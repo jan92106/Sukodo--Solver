@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sudoku-solver
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+```
+
+3. Push to GitHub
+4. Go to [render.com](https://render.com), connect your repo
+5. Deploy! Your API will be live at `https://your-app.onrender.com`
+
+## 2. **Railway (Very Easy - Free Tier)**
+
+1. Create `requirements.txt` (same as above)
+2. Add a `Procfile`:
+```
+web: gunicorn app:app
